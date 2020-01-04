@@ -48,8 +48,8 @@ export const subscribeRenderTemplate = (onChange, params, locale) => {
 export const buildRange = string => {
   const ranges = [];
   const range = (start, end) => new Array(end - start + 1).fill(undefined).map((_, i) => i + start);
-  if (string.includes('to')) {
-    const split = string.split('to');
+  if (string.includes(' to ')) {
+    const split = string.split(' to ');
     if (parseInt(split[1]) > parseInt(split[0])) ranges.push(range(parseInt(split[0]), parseInt(split[1])));
     else ranges.push(range(parseInt(split[1]), parseInt(split[0])));
   }
